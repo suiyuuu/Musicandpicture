@@ -1,22 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".ShareDetailActivity">
 
-    <TextView
-        android:id="@+id/placeholderText"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginBottom="64dp"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/detailCoverImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/share_image_description"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/image_gradient_overlay" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detailToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- 标题 -->
+            <TextView
+                android:id="@+id/detailTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="音乐与回忆" />
+
+            <!-- 作者和时间 -->
+            <TextView
+                android:id="@+id/detailAuthorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/share_author_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailTitleTextView"
+                tools:text="张三" />
+
+            <TextView
+                android:id="@+id/detailTimeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/share_time_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/detailAuthorTextView"
+                tools:text="3天前" />
+
+            <!-- 标签 -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/detailTagChipGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailAuthorTextView" />
+
+            <!-- 内容 -->
+            <TextView
+                android:id="@+id/detailContentTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/share_content_color"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailTagChipGroup"
+                tools:text="这首歌让我想起了高中时代的美好记忆，那时候我们经常一起听这首歌，然后讨论它的歌词和旋律..." />
+
+            <!-- 点赞区域 -->
+            <ImageView
+                android:id="@+id/detailLikeImageView"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/like_button_description"
+                android:src="@drawable/ic_like"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailContentTextView" />
+
+            <TextView
+                android:id="@+id/detailLikesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/share_likes_color"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/detailLikeImageView"
+                app:layout_constraintStart_toEndOf="@+id/detailLikeImageView"
+                app:layout_constraintTop_toTopOf="@+id/detailLikeImageView"
+                tools:text="128" />
+
+            <!-- 分享按钮 -->
+            <ImageButton
+                android:id="@+id/detailShareButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/share_button_description"
+                android:src="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="@+id/detailLikeImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/detailLikeImageView"
+                app:tint="@color/colorAccent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- 音乐播放按钮 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/musicPlayButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="先写个故事吧"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="16dp"
+        android:contentDescription="@string/play_music_description"
+        android:src="@drawable/ic_play"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_anchor="@id/appBarLayout"
+        app:layout_anchorGravity="bottom|end"
+        app:tint="@android:color/white" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

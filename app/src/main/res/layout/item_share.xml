@@ -6,106 +6,141 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
+    app:cardCornerRadius="16dp"
     app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/share_title_color"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="音乐与回忆" />
-
-        <TextView
-            android:id="@+id/authorTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textColor="@color/share_author_color"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-            tools:text="张三" />
-
-        <TextView
-            android:id="@+id/timeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textColor="@color/share_time_color"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-            tools:text="3天前" />
+        android:padding="0dp">
 
         <ImageView
             android:id="@+id/coverImageView"
             android:layout_width="0dp"
             android:layout_height="200dp"
-            android:layout_marginTop="12dp"
             android:contentDescription="@string/share_image_description"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/authorTextView"
+            app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/backgrounds/scenic" />
 
+        <View
+            android:id="@+id/gradientOverlay"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:background="@drawable/image_gradient_overlay"
+            app:layout_constraintBottom_toBottomOf="@+id/coverImageView"
+            app:layout_constraintEnd_toEndOf="@+id/coverImageView"
+            app:layout_constraintStart_toStartOf="@+id/coverImageView" />
+
         <TextView
-            android:id="@+id/contentTextView"
+            android:id="@+id/titleTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
             android:ellipsize="end"
-            android:maxLines="3"
-            android:textColor="@color/share_content_color"
-            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:maxLines="1"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/coverImageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coverImageView"
-            tools:text="这首歌让我想起了高中时代的美好记忆，那时候我们经常一起听这首歌，然后讨论它的歌词和旋律..." />
+            tools:text="音乐与回忆" />
 
-        <ImageView
-            android:id="@+id/likeImageView"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="16dp"
-            android:contentDescription="@string/like_button_description"
-            android:src="@drawable/ic_like"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contentTextView" />
-
-        <TextView
-            android:id="@+id/likesTextView"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textColor="@color/share_likes_color"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/likeImageView"
-            app:layout_constraintStart_toEndOf="@+id/likeImageView"
-            app:layout_constraintTop_toTopOf="@+id/likeImageView"
-            tools:text="128" />
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coverImageView">
 
-        <TextView
-            android:id="@+id/detailTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/view_detail"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contentTextView" />
+            <TextView
+                android:id="@+id/authorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/share_author_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="张三" />
 
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/share_time_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="3天前" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/tagChipGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:chipSpacingHorizontal="4dp"
+                app:chipSpacingVertical="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/authorTextView"
+                app:singleLine="true" />
+
+            <TextView
+                android:id="@+id/contentTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp"
+                android:maxLines="3"
+                android:textColor="@color/share_content_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tagChipGroup"
+                tools:text="这首歌让我想起了高中时代的美好记忆，那时候我们经常一起听这首歌，然后讨论它的歌词和旋律..." />
+
+            <ImageView
+                android:id="@+id/likeImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@string/like_button_description"
+                android:src="@drawable/ic_like"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contentTextView" />
+
+            <TextView
+                android:id="@+id/likesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/share_likes_color"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/likeImageView"
+                app:layout_constraintStart_toEndOf="@+id/likeImageView"
+                app:layout_constraintTop_toTopOf="@+id/likeImageView"
+                tools:text="128" />
+
+            <TextView
+                android:id="@+id/detailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_detail"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/likeImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/likeImageView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

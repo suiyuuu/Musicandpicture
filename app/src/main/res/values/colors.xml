@@ -1,54 +1,71 @@
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!-- 主色调 - 采用柔和的蓝紫渐变 -->
+    <color name="colorPrimary">#6A5ACD</color>
+    <color name="colorPrimaryDark">#5D4BA0</color>
+    <color name="colorAccent">#FF6B94</color>
 
-    <!-- 添加这些基本颜色 -->
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- 标准 Material Design 颜色 -->
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6A5ACD</color>
+    <color name="purple_700">#5D4BA0</color>
+    <color name="teal_200">#80CBC4</color>
+    <color name="teal_700">#00796B</color>
+    <color name="black">#121212</color>
+    <color name="white">#FFFFFF</color>
 
-    <!-- 您原来的自定义颜色 -->
-    <color name="image_title_color">#006064</color>
-    <color name="music_title_color">#1B5E20</color>
-    <color name="midi_button_text_color">#E65100</color>
+    <!-- 优化的界面颜色 -->
+    <color name="image_title_color">#2C5F7C</color>
+    <color name="music_title_color">#2E7D39</color>
+    <color name="midi_button_text_color">#F57F17</color>
+    <color name="image_area_tint">#E0F7FA</color>
+    <color name="music_area_tint">#E8F5E9</color>
+    <color name="midi_area_tint">#FFF3E0</color>
 
-    <color name="image_area_tint">#B3E0F2</color>
-    <color name="music_area_tint">#C8E6C9</color>
-    <color name="midi_area_tint">#FFE0B2</color>
-    <color name="share_title_color">#DD000000</color>
-    <color name="share_author_color">#AA000000</color>
-    <color name="share_time_color">#99000000</color>
-    <color name="share_content_color">#CC000000</color>
-    <color name="share_likes_color">#AA000000</color>
-    <color name="community_title_color">#3F51B5</color>
+    <!-- 统一的文本颜色 -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_color">#F5F5F5</color>
 
+    <!-- 柔和的卡片颜色 -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_background_dark">#2A2A2A</color>
+    <color name="card_overlay">#33000000</color>
 
-    <!-- 主题颜色 -->
-    <color name="primary_color">#FF6200EE</color> <!-- 深紫色 -->
-    <color name="secondary_color">#FF03DAC5</color> <!-- 薄荷绿 -->
-    <color name="background_color">#FF121212</color> <!-- 深灰色背景 -->
-    <color name="text_color">#FFFFFFFF</color> <!-- 白色文字 -->
-    <color name="button_background">#FF3700B3</color> <!-- 按钮背景 -->
-    <color name="toolbar_background">#80000000</color> <!-- 半透明黑色 -->
-    <color name="card_background">#FF202020</color> <!-- 卡片背景 -->
+    <!-- 社区相关颜色 -->
+    <color name="share_title_color">#212121</color>
+    <color name="share_author_color">#616161</color>
+    <color name="share_time_color">#757575</color>
+    <color name="share_content_color">#424242</color>
+    <color name="share_likes_color">#424242</color>
+    <color name="community_title_color">#6A5ACD</color>
 
-    <!-- 主题颜色 -->
-    <color name="primary">#3F51B5</color>
-    <color name="primary_dark">#303F9F</color>
-    <color name="accent">#FF4081</color>
-
-    <!-- 文本颜色 -->
-    <color name="text_primary">#FFFFFF</color>
-    <color name="text_secondary">#B3FFFFFF</color>
+    <!-- 主题颜色 - 深色主题 -->
+    <color name="primary_color">#6A5ACD</color>
+    <color name="secondary_color">#FF6B94</color>
+    <color name="background_color">#121212</color>
+    <color name="button_background">#5D4BA0</color>
+    <color name="toolbar_background">#806A5ACD</color>
+    <color name="card_background_transparent">#80FFFFFF</color>
 
     <!-- 关键词按钮颜色 -->
     <color name="keyword_text_color">#FFFFFF</color>
     <color name="keyword_selected_text_color">#FFFFFF</color>
-    <color name="keyword_background">#4D303F9F</color>
-    <color name="keyword_selected_background">#FF4081</color>
+    <color name="keyword_background">#4D6A5ACD</color>
+    <color name="keyword_selected_background">#FF6B94</color>
+
+    <!-- 渐变背景色 -->
+    <color name="gradient_start">#F5F7FA</color>
+    <color name="gradient_end">#E4EBF5</color>
+
+    <!-- 成功/错误颜色 -->
+    <color name="success_color">#4CAF50</color>
+    <color name="error_color">#F44336</color>
+
+    <!-- 图片滤镜按钮颜色 -->
+    <color name="filter_none">#90A4AE</color>
+    <color name="filter_rock">#E57373</color>
+    <color name="filter_pop">#F06292</color>
+    <color name="filter_jazz">#BA68C8</color>
+    <color name="filter_classical">#9575CD</color>
+    <color name="filter_electronic">#4DD0E1</color>
 </resources>

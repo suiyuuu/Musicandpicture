@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Musicandpicture</string>
+
+    <!-- Home Screen -->
     <string name="image_area_title">图片区域</string>
     <string name="music_area_title">音乐区域</string>
     <string name="import_midi_button_text">导入MIDI文件</string>
@@ -20,6 +22,8 @@
     <string name="all_images">所有图片</string>
     <string name="all_music">所有音乐</string>
     <string name="back">返回</string>
+
+    <!-- MIDI Player -->
     <string name="midi_player_title">MIDI播放器</string>
     <string name="no_images_for_slideshow">没有可用于幻灯片的图片</string>
     <string name="select_instrument">选择音色:</string>
@@ -31,13 +35,16 @@
     <string name="slow">慢</string>
     <string name="medium">中</string>
     <string name="fast">快</string>
+
+    <!-- Music Player -->
     <string name="tab_lyrics">歌词</string>
     <string name="tab_keywords">关键词</string>
     <string name="tab_story">故事</string>
     <string name="story_not_found">未找到相关故事</string>
-
     <string name="story_hint">在这里编写或编辑您的故事…</string>
     <string name="album_art_description">专辑封面</string>
+
+    <!-- 社区分享 -->
     <string name="community_title">来看看大家吧</string>
     <string name="community_tab_popular">热门</string>
     <string name="community_tab_latest">最新</string>
@@ -47,28 +54,27 @@
     <string name="share_image_description">分享图片</string>
     <string name="like_button_description">点赞按钮</string>
     <string name="share_image_via">通过以下方式分享图片</string>
-    <string name="flip_image_description">图片不见咯</string>
+    <string name="share_button_description">分享按钮</string>
+    <string name="play_music_description">播放音乐</string>
+
+    <!-- 图片滤镜 -->
+    <string name="flip_image_description">翻转图片</string>
     <string name="music_style_filters">音乐风格</string>
-    <string name="filter_none">None</string>
-    <string name="filter_rock">Rock</string>
-    <string name="filter_pop">Pop</string>
-    <string name="filter_jazz">Jazz</string>
-    <string name="filter_classical">Classical</string>
-    <string name="filter_electronic">Electronic</string>
+    <string name="filter_none">原图</string>
+    <string name="filter_rock">摇滚</string>
+    <string name="filter_pop">流行</string>
+    <string name="filter_jazz">爵士</string>
+    <string name="filter_classical">古典</string>
+    <string name="filter_electronic">电子</string>
     <string name="save_image">保存</string>
     <string name="share_image">分享</string>
-    <string name="image_notes">Image Notes</string>
-    <string name="write_notes_hint">在这里写哦~</string>
-    <string name="save_notes">保存</string>
-    <string name="error_saving_image">错误保存图片</string>
-    <string name="error_sharing_image">错误分享图片</string>
-    <string name="notes_saved">笔记保存</string>
-    <string name="image_saved_to_gallery">图片保存到画廊</string>
-    <!-- 故事相关字符串 -->
-
-    <string name="story_empty_error">故事内容不能为空</string>
-    <string name="error_saving_story">保存故事时发生错误</string>
-
+    <string name="image_notes">图片笔记</string>
+    <string name="write_notes_hint">在这里写下你的想法...</string>
+    <string name="save_notes">保存笔记</string>
+    <string name="error_saving_image">保存图片失败</string>
+    <string name="error_sharing_image">分享图片失败</string>
+    <string name="notes_saved">笔记已保存</string>
+    <string name="image_saved_to_gallery">图片已保存到相册</string>
 
     <!-- 歌词界面 -->
     <string name="lyrics_not_found">未找到歌词</string>
@@ -93,7 +99,34 @@
     <string name="error_loading_story">加载故事失败</string>
     <string name="story_saved">故事已保存</string>
     <string name="story_save_error">保存故事失败</string>
+    <string name="story_empty_error">故事内容不能为空</string>
 
+    <!-- 通用UI元素 -->
     <string name="background_description">背景图片</string>
     <string name="edit_notes_description">编辑笔记</string>
+    <string name="no_shares_yet">暂无分享内容\n成为第一个分享的人吧！</string>
+    <string name="no_personal_shares">您还没有分享过内容\n点击右下角按钮开始分享</string>
+
+    <!-- 分享功能 -->
+    <string name="share_content">分享内容</string>
+    <string name="share_title_hint">标题</string>
+    <string name="share_content_hint">分享你的想法...</string>
+    <string name="select_image">选择图片</string>
+    <string name="select_music">选择音乐 (可选)</string>
+    <string name="selected_music">已选择: %1$s</string>
+    <string name="change_image">更换图片</string>
+    <string name="select_tags">选择标签</string>
+    <string name="share_now">立即分享</string>
+    <string name="title_required">请输入标题</string>
+    <string name="content_required">请输入内容</string>
+    <string name="image_required">请选择一张图片</string>
+    <string name="share_success">分享成功</string>
+    <string name="share_failed">分享失败</string>
+    <string name="enter_nickname">输入昵称</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="error_loading_share">加载分享内容失败</string>
+    <string name="share_not_found">找不到分享内容</string>
+    <string name="error_playing_music">播放音乐时出错</string>
+    <string name="share_via">通过以下方式分享</string>
 </resources>
