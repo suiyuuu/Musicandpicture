@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +22,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.github.chrisbanes.photoview.PhotoView;
 
 import java.util.List;
 
@@ -48,15 +48,35 @@ public class FullscreenImageAdapter extends RecyclerView.Adapter<FullscreenImage
         notifyDataSetChanged();
     }
 
+    /**
+     * 获取当前位置的原始bitmap
+     */
+    public Bitmap getCurrentBitmap() {
+        int currentPosition = ((ImageFullscreenActivity) context)
+                .findViewById(R.id.fullscreenViewPager)
+                .getVerticalScrollbarPosition();
+
+        if (currentPosition < 0 || currentPosition >= bitmapCache.length) {
+            return null;
+        }
+
+        return bitmapCache[currentPosition];
+    }
+
+    /**
+     * 获取应用当前滤镜后的bitmap
+     */
     public Bitmap getCurrentFilteredBitmap() {
-        int currentPosition = ((ImageFullscreenActivity) context).findViewById(R.id.fullscreenViewPager).getVerticalScrollbarPosition();
+        int currentPosition = ((ImageFullscreenActivity) context)
+                .findViewById(R.id.fullscreenViewPager)
+                .getVerticalScrollbarPosition();
 
         if (currentPosition < 0 || currentPosition >= bitmapCache.length || bitmapCache[currentPosition] == null) {
             Log.e(TAG, "No bitmap available at position: " + currentPosition);
             return null;
         }
 
-        // Create a new bitmap and apply the filter
+        // 创建新的bitmap并应用滤镜
         Bitmap originalBitmap = bitmapCache[currentPosition];
         Bitmap resultBitmap = Bitmap.createBitmap(
                 originalBitmap.getWidth(),
@@ -83,7 +103,7 @@ public class FullscreenImageAdapter extends RecyclerView.Adapter<FullscreenImage
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
         MediaItem item = imageList.get(position);
 
-        // Load the image using Glide
+        // 使用Glide加载图片
         Glide.with(context)
                 .load(item.getUri())
                 .listener(new RequestListener<Drawable>() {
@@ -98,7 +118,7 @@ public class FullscreenImageAdapter extends RecyclerView.Adapter<FullscreenImage
                     public boolean onResourceReady(Drawable resource, Object model,
                                                    Target<Drawable> target, DataSource dataSource,
                                                    boolean isFirstResource) {
-                        // When image is loaded, cache the bitmap for filter operations
+                        // 当图片加载完成后，缓存bitmap用于滤镜操作
                         if (resource instanceof BitmapDrawable) {
                             Bitmap loadedBitmap = ((BitmapDrawable) resource).getBitmap();
                             bitmapCache[position] = loadedBitmap;
@@ -106,10 +126,13 @@ public class FullscreenImageAdapter extends RecyclerView.Adapter<FullscreenImage
                         return false;
                     }
                 })
-                .into(holder.imageView);
+                .into(holder.photoView);
 
-        // Apply current filter
-        holder.imageView.setColorFilter(currentFilter);
+        // 应用当前滤镜
+        holder.photoView.setColorFilter(currentFilter);
+
+        // 设置双击缩放
+        holder.photoView.setMaximumScale(5.0f);
     }
 
     @Override
@@ -118,11 +141,11 @@ public class FullscreenImageAdapter extends RecyclerView.Adapter<FullscreenImage
     }
 
     static class ImageViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
+        PhotoView photoView;
 
         public ImageViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.fullscreenImageView);
+            photoView = itemView.findViewById(R.id.fullscreenImageView);
         }
     }
 }

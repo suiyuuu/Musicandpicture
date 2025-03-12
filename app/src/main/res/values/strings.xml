@@ -55,11 +55,11 @@
     <string name="filter_jazz">Jazz</string>
     <string name="filter_classical">Classical</string>
     <string name="filter_electronic">Electronic</string>
-    <string name="save_image">Save Image</string>
-    <string name="share_image">Share Image</string>
+    <string name="save_image">保存</string>
+    <string name="share_image">分享</string>
     <string name="image_notes">Image Notes</string>
-    <string name="write_notes_hint">Write your notes here...</string>
-    <string name="save_notes">Save Notes</string>
+    <string name="write_notes_hint">在这里写哦~</string>
+    <string name="save_notes">保存</string>
     <string name="error_saving_image">错误保存图片</string>
     <string name="error_sharing_image">错误分享图片</string>
     <string name="notes_saved">笔记保存</string>
@@ -93,4 +93,7 @@
     <string name="error_loading_story">加载故事失败</string>
     <string name="story_saved">故事已保存</string>
     <string name="story_save_error">保存故事失败</string>
+
+    <string name="background_description">背景图片</string>
+    <string name="edit_notes_description">编辑笔记</string>
 </resources>

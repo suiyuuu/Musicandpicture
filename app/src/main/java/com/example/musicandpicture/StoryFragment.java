@@ -71,6 +71,11 @@ public class StoryFragment extends Fragment {
             storyProgressBar = view.findViewById(R.id.storyProgressBar);
             storyErrorTextView = view.findViewById(R.id.storyErrorTextView);
 
+            // 确保EditText可编辑
+            storyEditText.setEnabled(true);
+            storyEditText.setFocusable(true);
+            storyEditText.setFocusableInTouchMode(true);
+
             // 如果有保存的内容，恢复它
             if (!TextUtils.isEmpty(currentStoryContent)) {
                 storyEditText.setText(currentStoryContent);
@@ -105,6 +110,8 @@ public class StoryFragment extends Fragment {
                     storyEditText.setVisibility(View.VISIBLE);
                     storyEditText.setHint(R.string.story_waiting_hint);
                     storyEditText.setEnabled(true);
+                    storyEditText.setFocusable(true);
+                    storyEditText.setFocusableInTouchMode(true);
 
                     // 恢复之前的内容
                     if (!TextUtils.isEmpty(currentStoryContent)) {
@@ -164,6 +171,8 @@ public class StoryFragment extends Fragment {
                     storyEditText.setVisibility(View.VISIBLE);
                     storyEditText.setText("故事生成失败，您可以在此创建自己的故事...");
                     storyEditText.setEnabled(true);
+                    storyEditText.setFocusable(true);
+                    storyEditText.setFocusableInTouchMode(true);
                     currentStoryContent = "故事生成失败，您可以在此创建自己的故事...";
                 }
 
@@ -208,6 +217,8 @@ public class StoryFragment extends Fragment {
                     storyEditText.setVisibility(View.VISIBLE);
                     storyEditText.setText(currentStoryContent);
                     storyEditText.setEnabled(true); // 确保编辑框可以编辑
+                    storyEditText.setFocusable(true);
+                    storyEditText.setFocusableInTouchMode(true);
 
                     // 如果是用户需要自行编辑的模版，设置焦点
                     if (currentStoryContent.contains("请在此编辑您的故事")) {
