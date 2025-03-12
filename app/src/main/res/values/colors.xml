@@ -1,0 +1,54 @@
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 添加这些基本颜色 -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 您原来的自定义颜色 -->
+    <color name="image_title_color">#006064</color>
+    <color name="music_title_color">#1B5E20</color>
+    <color name="midi_button_text_color">#E65100</color>
+
+    <color name="image_area_tint">#B3E0F2</color>
+    <color name="music_area_tint">#C8E6C9</color>
+    <color name="midi_area_tint">#FFE0B2</color>
+    <color name="share_title_color">#DD000000</color>
+    <color name="share_author_color">#AA000000</color>
+    <color name="share_time_color">#99000000</color>
+    <color name="share_content_color">#CC000000</color>
+    <color name="share_likes_color">#AA000000</color>
+    <color name="community_title_color">#3F51B5</color>
+
+
+    <!-- 主题颜色 -->
+    <color name="primary_color">#FF6200EE</color> <!-- 深紫色 -->
+    <color name="secondary_color">#FF03DAC5</color> <!-- 薄荷绿 -->
+    <color name="background_color">#FF121212</color> <!-- 深灰色背景 -->
+    <color name="text_color">#FFFFFFFF</color> <!-- 白色文字 -->
+    <color name="button_background">#FF3700B3</color> <!-- 按钮背景 -->
+    <color name="toolbar_background">#80000000</color> <!-- 半透明黑色 -->
+    <color name="card_background">#FF202020</color> <!-- 卡片背景 -->
+
+    <!-- 主题颜色 -->
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="accent">#FF4081</color>
+
+    <!-- 文本颜色 -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+
+    <!-- 关键词按钮颜色 -->
+    <color name="keyword_text_color">#FFFFFF</color>
+    <color name="keyword_selected_text_color">#FFFFFF</color>
+    <color name="keyword_background">#4D303F9F</color>
+    <color name="keyword_selected_background">#FF4081</color>
+</resources>
