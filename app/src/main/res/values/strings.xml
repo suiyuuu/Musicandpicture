@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">Musicandpicture</string>
+    <string name="image_area_title">图片区域</string>
+    <string name="music_area_title">音乐区域</string>
+    <string name="import_midi_button_text">导入MIDI文件</string>
+    <string name="selected_image_description">已选择的图片</string>
+    <string name="add_image_button_description">添加图片按钮</string>
+    <string name="add_music_button_description">添加音乐按钮</string>
+    <string name="music_icon_description">音乐图标</string>
+    <string name="image_import_success">图片导入成功</string>
+    <string name="music_import_success">音乐导入成功</string>
+    <string name="midi_import_success">MIDI文件导入成功</string>
+    <string name="import_failed">导入失败，请重试</string>
+    <string name="no_file_selected">未选择文件</string>
+    <string name="view_all_images">查看所有图片</string>
+    <string name="view_all_music">查看所有音乐</string>
+    <string name="imported_image_description">导入的图片</string>
+    <string name="no_images_imported">暂无导入的图片</string>
+    <string name="no_music_imported">暂无导入的音乐</string>
+    <string name="all_images">所有图片</string>
+    <string name="all_music">所有音乐</string>
+    <string name="back">返回</string>
+    <string name="midi_player_title">MIDI播放器</string>
+    <string name="no_images_for_slideshow">没有可用于幻灯片的图片</string>
+    <string name="select_instrument">选择音色:</string>
+    <string name="play_pause">播放/暂停</string>
+    <string name="previous_track">上一曲</string>
+    <string name="next_track">下一曲</string>
+    <string name="no_midi_selected">未选择MIDI文件</string>
+    <string name="slideshow_speed">幻灯片速度:</string>
+    <string name="slow">慢</string>
+    <string name="medium">中</string>
+    <string name="fast">快</string>
+    <string name="tab_lyrics">歌词</string>
+    <string name="tab_keywords">关键词</string>
+    <string name="tab_story">故事</string>
+    <string name="story_not_found">未找到相关故事</string>
+
+    <string name="story_hint">在这里编写或编辑您的故事…</string>
+    <string name="album_art_description">专辑封面</string>
+    <string name="community_title">来看看大家吧</string>
+    <string name="community_tab_popular">热门</string>
+    <string name="community_tab_latest">最新</string>
+    <string name="community_tab_my_shares">我的</string>
+    <string name="share_new_content">分享</string>
+    <string name="view_detail">查看详情</string>
+    <string name="share_image_description">分享图片</string>
+    <string name="like_button_description">点赞按钮</string>
+    <string name="share_image_via">通过以下方式分享图片</string>
+    <string name="flip_image_description">图片不见咯</string>
+    <string name="music_style_filters">音乐风格</string>
+    <string name="filter_none">None</string>
+    <string name="filter_rock">Rock</string>
+    <string name="filter_pop">Pop</string>
+    <string name="filter_jazz">Jazz</string>
+    <string name="filter_classical">Classical</string>
+    <string name="filter_electronic">Electronic</string>
+    <string name="save_image">Save Image</string>
+    <string name="share_image">Share Image</string>
+    <string name="image_notes">Image Notes</string>
+    <string name="write_notes_hint">Write your notes here...</string>
+    <string name="save_notes">Save Notes</string>
+    <string name="error_saving_image">错误保存图片</string>
+    <string name="error_sharing_image">错误分享图片</string>
+    <string name="notes_saved">笔记保存</string>
+    <string name="image_saved_to_gallery">图片保存到画廊</string>
+    <!-- 故事相关字符串 -->
+
+    <string name="story_empty_error">故事内容不能为空</string>
+    <string name="error_saving_story">保存故事时发生错误</string>
+
+
+    <!-- 歌词界面 -->
+    <string name="lyrics_not_found">未找到歌词</string>
+
+    <!-- 关键词界面 -->
+    <string name="top_keywords">歌词关键词</string>
+    <string name="keywords_subtitle">选择下方关键词来创建故事，已为您提取歌词中的高频词汇</string>
+    <string name="add_custom_keyword">添加自定义关键词</string>
+    <string name="add">添加</string>
+    <string name="generate_story">创建故事</string>
+    <string name="select_keywords_prompt">请至少选择一个关键词</string>
+    <string name="keywords_not_found">未能提取关键词</string>
+    <string name="no_keywords_found">未找到关键词，请手动添加</string>
+    <string name="keyword_cannot_be_empty">关键词不能为空</string>
+    <string name="keyword_already_exists">关键词已存在</string>
+    <string name="max_keywords_limit">最多只能选择 %1$d 个关键词</string>
+    <string name="selected_keywords_count">已选择 %1$d/%2$d 个关键词</string>
+
+    <!-- 故事界面 -->
+    <string name="story_waiting_hint">点击"创建故事"按钮生成故事...</string>
+    <string name="save_story">保存故事</string>
+    <string name="error_loading_story">加载故事失败</string>
+    <string name="story_saved">故事已保存</string>
+    <string name="story_save_error">保存故事失败</string>
+</resources>

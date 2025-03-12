@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".ImageFullscreenActivity">
+
+    <!-- 主要图片显示区域 -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/fullscreenViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 顶部工具栏 -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fullscreenToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#80000000"
+        app:navigationIcon="@drawable/ic_back"
+        app:title=""
+        app:titleTextColor="@android:color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/flipImageButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/flip_image_description"
+                android:src="@drawable/ic_flip"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@android:color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- 底部控制区域 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/filterControlsCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:cardBackgroundColor="#80000000"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/music_style_filters"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/filterNoneButton"
+                        style="@style/FilterButtonStyle"
+                        android:text="@string/filter_none" />
+
+                    <Button
+                        android:id="@+id/filterRockButton"
+                        style="@style/FilterButtonStyle"
+                        android:text="@string/filter_rock" />
+
+                    <Button
+                        android:id="@+id/filterPopButton"
+                        style="@style/FilterButtonStyle"
+                        android:text="@string/filter_pop" />
+
+                    <Button
+                        android:id="@+id/filterJazzButton"
+                        style="@style/FilterButtonStyle"
+                        android:text="@string/filter_jazz" />
+
+                    <Button
+                        android:id="@+id/filterClassicalButton"
+                        style="@style/FilterButtonStyle"
+                        android:text="@string/filter_classical" />
+
+                    <Button
+                        android:id="@+id/filterElectronicButton"
+                        style="@style/FilterButtonStyle"
+                        android:text="@string/filter_electronic" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/saveImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/rounded_button_background"
+                    android:text="@string/save_image"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/shareImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_button_background"
+                    android:text="@string/share_image"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 翻转后的卡片背面 - 初始隐藏 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageBacksideCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/image_notes"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/imageNotesEditText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="top|start"
+                android:hint="@string/write_notes_hint"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:textColor="#333333"
+                android:textColorHint="#757575"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/saveNotesButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_button_background"
+                android:text="@string/save_notes"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
