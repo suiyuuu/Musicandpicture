@@ -20,6 +20,7 @@
     <color name="image_area_tint">#E0F7FA</color>
     <color name="music_area_tint">#E8F5E9</color>
     <color name="midi_area_tint">#FFF3E0</color>
+    <color name="match_title_color">#FF6B94</color>  <!-- 新增颜色 -->
 
     <!-- 统一的文本颜色 -->
     <color name="text_primary">#212121</color>

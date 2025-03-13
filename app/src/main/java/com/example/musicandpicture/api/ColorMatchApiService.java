@@ -10,7 +10,9 @@ import com.example.musicandpicture.model.MatchResult;
 import com.example.musicandpicture.model.MusicItemDto;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -29,7 +31,7 @@ import retrofit2.http.POST;
  */
 public class ColorMatchApiService {
     private static final String TAG = "ColorMatchApiService";
-    private static final String BASE_URL = "http://10.0.2.2:8000/"; // 本地开发服务器地址
+    private static final String BASE_URL = "http://192.168.10.186:5000/"; // 本地开发服务器地址
     private static final boolean USE_LOCAL_FALLBACK = true; // 使用本地回退算法
 
     private final ColorMatchApi api;
@@ -184,7 +186,7 @@ public class ColorMatchApiService {
      */
     private String[] getKeywords(MediaItem musicItem) {
         // 若没有关键词，生成随机关键词
-        if (musicItem.getKeywords() == null || musicItem.getKeywords().isEmpty()) {
+        if (musicItem.getKeywords() == null || musicItem.getKeywords().trim().isEmpty()) {
             generateRandomKeywords(musicItem);
         }
 
@@ -273,7 +275,7 @@ public class ColorMatchApiService {
      * 关键词到颜色的映射表
      */
     private static class KeywordColorMap {
-        private final java.util.Map<String, float[]> map = new java.util.HashMap<>();
+        private final Map<String, float[]> map = new HashMap<>();
 
         public KeywordColorMap() {
             // 关键词到颜色的映射

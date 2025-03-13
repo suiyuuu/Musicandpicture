@@ -7,6 +7,7 @@ public class MediaItem {
     private String fileName;
     private String songName;
     private String artistName;
+    private String keywords; // 存储以逗号分隔的关键词
 
     public MediaItem() {
     }
@@ -41,5 +42,21 @@ public class MediaItem {
 
     public void setArtistName(String artistName) {
         this.artistName = artistName;
+    }
+
+    public String getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(String keywords) {
+        this.keywords = keywords;
+    }
+
+    /**
+     * 检查关键词是否为空
+     * @return 如果关键词为空或null则返回true
+     */
+    public boolean isKeywordsEmpty() {
+        return keywords == null || keywords.trim().isEmpty();
     }
 }

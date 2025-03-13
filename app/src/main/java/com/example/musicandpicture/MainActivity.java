@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     public static List<MediaItem> globalImageList = new ArrayList<>();
     public static List<MediaItem> globalMusicList = new ArrayList<>();
 
+    // 用于存储颜色匹配结果的静态变量
+    public static Uri matchedImageUri = null;
+    public static List<MediaItem> matchedMusicList = new ArrayList<>();
+
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
 
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             // 不设置任何文字
         }).attach();
-        
+
     }
 
     // 从Uri获取文件名 - 保留为公共方法，供Fragment使用
