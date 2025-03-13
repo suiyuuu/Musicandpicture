@@ -86,11 +86,14 @@ public class ShareContentActivity extends AppCompatActivity {
         // 初始化视图
         initViews();
 
-        // 设置工具栏
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle(R.string.share_content);
+        // 设置工具栏 - 修复此处的问题
+        // 确保主题设置为 Theme.Musicandpicture.NoActionBar
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setTitle(R.string.share_content);
+            }
         }
 
         // 获取作者ID和名称（使用设备ID作为匿名ID）

@@ -7,8 +7,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
 
-
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -45,7 +43,8 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ShareDetailActivity"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.Musicandpicture.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -58,18 +57,19 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <!-- 确保添加任何可能缺少的活动 -->
-
+        <!-- 修复ActivityTheme -->
         <activity
             android:name=".ImageFullscreenActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
 
+        <!-- 修复ShareContentActivity的主题 -->
         <activity
             android:name=".ShareContentActivity"
             android:label="@string/share_content"
             android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.Musicandpicture.NoActionBar"
             android:exported="false" />
 
         <activity
