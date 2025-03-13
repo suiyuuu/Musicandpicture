@@ -56,108 +56,276 @@
         android:background="@android:color/white"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:orientation="vertical">
 
-            <!-- 标题 -->
-            <TextView
-                android:id="@+id/detailTitleTextView"
-                android:layout_width="0dp"
+            <!-- 内容区域 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
-                android:textColor="@color/text_primary"
-                android:textSize="22sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="音乐与回忆" />
+                android:padding="16dp">
 
-            <!-- 作者和时间 -->
-            <TextView
-                android:id="@+id/detailAuthorTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <!-- 标题 -->
+                <TextView
+                    android:id="@+id/detailTitleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="音乐与回忆" />
+
+                <!-- 作者和时间 -->
+                <TextView
+                    android:id="@+id/detailAuthorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/share_author_color"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detailTitleTextView"
+                    tools:text="张三" />
+
+                <TextView
+                    android:id="@+id/detailTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/share_time_color"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/detailAuthorTextView"
+                    tools:text="3天前" />
+
+                <!-- 标签 -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/detailTagChipGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detailAuthorTextView" />
+
+                <!-- 内容 -->
+                <TextView
+                    android:id="@+id/detailContentTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/share_content_color"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detailTagChipGroup"
+                    tools:text="这首歌让我想起了高中时代的美好记忆，那时候我们经常一起听这首歌，然后讨论它的歌词和旋律..." />
+
+                <!-- 点赞区域 -->
+                <ImageView
+                    android:id="@+id/detailLikeImageView"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="24dp"
+                    android:contentDescription="@string/like_button_description"
+                    android:src="@drawable/ic_like"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detailContentTextView" />
+
+                <TextView
+                    android:id="@+id/detailLikesTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/share_likes_color"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/detailLikeImageView"
+                    app:layout_constraintStart_toEndOf="@+id/detailLikeImageView"
+                    app:layout_constraintTop_toTopOf="@+id/detailLikeImageView"
+                    tools:text="128" />
+
+                <!-- 分享按钮 -->
+                <ImageButton
+                    android:id="@+id/detailShareButton"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/share_button_description"
+                    android:src="@drawable/ic_share"
+                    app:layout_constraintBottom_toBottomOf="@+id/detailLikeImageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/detailLikeImageView"
+                    app:tint="@color/colorAccent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 评论区分隔线 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/share_author_color"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailTitleTextView"
-                tools:text="张三" />
+                android:background="#E0E0E0" />
 
+            <!-- 评论区标题 -->
             <TextView
-                android:id="@+id/detailTimeTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/share_time_color"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/detailAuthorTextView"
-                tools:text="3天前" />
+                android:padding="16dp"
+                android:text="@string/comments_section_title"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-            <!-- 标签 -->
-            <com.google.android.material.chip.ChipGroup
-                android:id="@+id/detailTagChipGroup"
-                android:layout_width="0dp"
+            <!-- 评论列表 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/commentsRecyclerView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailAuthorTextView" />
+                android:layout_marginBottom="8dp"
+                android:nestedScrollingEnabled="false" />
 
-            <!-- 内容 -->
-            <TextView
-                android:id="@+id/detailContentTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:lineSpacingExtra="4dp"
-                android:textColor="@color/share_content_color"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailTagChipGroup"
-                tools:text="这首歌让我想起了高中时代的美好记忆，那时候我们经常一起听这首歌，然后讨论它的歌词和旋律..." />
+            <!-- 添加评论区域的底部内边距 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
 
-            <!-- 点赞区域 -->
-            <ImageView
-                android:id="@+id/detailLikeImageView"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginTop="24dp"
-                android:contentDescription="@string/like_button_description"
-                android:src="@drawable/ic_like"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailContentTextView" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/detailLikesTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:textColor="@color/share_likes_color"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/detailLikeImageView"
-                app:layout_constraintStart_toEndOf="@+id/detailLikeImageView"
-                app:layout_constraintTop_toTopOf="@+id/detailLikeImageView"
-                tools:text="128" />
-
-            <!-- 分享按钮 -->
-            <ImageButton
-                android:id="@+id/detailShareButton"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/share_button_description"
-                android:src="@drawable/ic_share"
-                app:layout_constraintBottom_toBottomOf="@+id/detailLikeImageView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/detailLikeImageView"
-                app:tint="@color/colorAccent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <!-- 评论输入框区域 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- 已选图片预览 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/commentImagePreview"
+                    android:layout_width="120dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/comment_image_preview"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/cancelImageButton"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignTop="@id/commentImagePreview"
+                    android:layout_alignEnd="@id/commentImagePreview"
+                    android:background="#80000000"
+                    android:contentDescription="@string/cancel_image_description"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_close"
+                    android:visibility="gone"
+                    app:tint="@android:color/white" />
+
+                <!-- 已选音频提示 -->
+                <TextView
+                    android:id="@+id/audioSelectedText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/commentImagePreview"
+                    android:background="#E0F7FA"
+                    android:drawableStart="@drawable/ic_music_note"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:padding="8dp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    tools:text="音频文件.mp3" />
+
+                <ImageButton
+                    android:id="@+id/cancelAudioButton"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignTop="@id/audioSelectedText"
+                    android:layout_alignEnd="@id/audioSelectedText"
+                    android:background="#80000000"
+                    android:contentDescription="@string/cancel_audio_description"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_close"
+                    android:visibility="gone"
+                    app:tint="@android:color/white" />
+
+            </RelativeLayout>
+
+            <!-- 评论输入和发送区域 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/commentEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/comment_edit_background"
+                    android:hint="@string/comment_hint"
+                    android:inputType="textMultiLine"
+                    android:maxLines="4"
+                    android:minHeight="40dp"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+
+                <ImageButton
+                    android:id="@+id/addCommentImageButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_image_description"
+                    android:src="@drawable/ic_add_photo"
+                    app:tint="@color/colorAccent" />
+
+                <ImageButton
+                    android:id="@+id/addCommentAudioButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/add_audio_description"
+                    android:src="@drawable/ic_music_note"
+                    app:tint="@color/colorAccent" />
+
+                <ImageButton
+                    android:id="@+id/sendCommentButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/send_comment_description"
+                    android:src="@drawable/ic_send"
+                    app:tint="@color/colorAccent" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <!-- 音乐播放按钮 -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton

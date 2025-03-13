@@ -130,4 +130,22 @@
     <string name="error_playing_music">播放音乐时出错</string>
     <string name="share_via">通过以下方式分享</string>
     <string name="error_saving_story">保存故事失败</string>
+
+    <!-- 评论功能相关字符串 -->
+    <string name="comments_section_title">评论</string>
+    <string name="comment_hint">发表评论...</string>
+    <string name="add_image_description">添加图片</string>
+    <string name="add_audio_description">添加音频</string>
+    <string name="send_comment_description">发送评论</string>
+    <string name="comment_image_description">评论图片</string>
+    <string name="comment_image_preview">评论图片预览</string>
+    <string name="cancel_image_description">取消图片</string>
+    <string name="cancel_audio_description">取消音频</string>
+    <string name="play_audio_description">播放音频</string>
+    <string name="delete_comment_description">删除评论</string>
+    <string name="comment_posted_success">评论发布成功</string>
+    <string name="comment_posted_fail">评论发布失败</string>
+    <string name="comment_deleted">评论已删除</string>
+    <string name="no_comments_yet">暂无评论，快来发表第一条评论吧！</string>
+    <string name="enter_comment_or_add_media">请输入评论内容或添加媒体</string>
 </resources>

@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/musicPlayerToolbar"
         app:layout_constraintWidth_percent="0.7"
-        tools:src="@drawable/default_album_art" />
+        tools:src="@drawable/shibaipin" />
 
     <TextView
         android:id="@+id/songTitleTextView"
