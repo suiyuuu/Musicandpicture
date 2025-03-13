@@ -148,4 +148,26 @@
     <string name="comment_deleted">评论已删除</string>
     <string name="no_comments_yet">暂无评论，快来发表第一条评论吧！</string>
     <string name="enter_comment_or_add_media">请输入评论内容或添加媒体</string>
+
+    <!-- Match area strings -->
+    <string name="match_area_title">图像音乐匹配</string>
+    <string name="match_subtitle">选择一张图片，按照色调匹配相关音乐</string>
+    <string name="select_image_to_match">选择图片</string>
+    <string name="match_button_text">开始匹配</string>
+    <string name="match_playlist_title">已为图片匹配的音乐</string>
+    <string name="play_matched_playlist">播放幻灯片</string>
+    <string name="select_image_first">请先选择一张图片</string>
+    <string name="no_matched_music">没有匹配到音乐</string>
+    <string name="no_music_matched">没有匹配到相关音乐</string>
+    <string name="music_matched_success">成功匹配音乐！</string>
+    <string name="error_loading_image">加载图片失败</string>
+    <string name="error_processing_image">处理图片失败</string>
+    <string name="color_matching_error">颜色匹配过程出错</string>
+
+    <!-- Slideshow strings -->
+    <string name="unknown_artist">未知艺术家</string>
+    <string name="slideshow_image_description">幻灯片图片</string>
+    <string name="close_button_description">关闭按钮</string>
+<!--    <string name="error_playing_music">播放音乐失败</string>-->
+
 </resources>
