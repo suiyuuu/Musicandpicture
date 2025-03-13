@@ -30,7 +30,7 @@ public class ApiService {
     private static final String TAG = "ApiService";
 
     // 使用可配置的服务器地址，便于不同环境切换
-    private static final String BASE_URL = "http://192.168.10.186:5000/";
+    private static final String BASE_URL = "http://10.222.187.0:5000/";
 
     // 后备功能开关 - 当API服务不可用时启用本地处理
     private static final boolean ENABLE_FALLBACK = true;

@@ -15,12 +15,15 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@android:color/transparent"
         app:tabBackground="@android:color/transparent"
-        app:tabGravity="center"
         app:tabIndicatorHeight="0dp"
-        app:tabMode="fixed" />
+        app:tabRippleColor="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tabMaxWidth="0dp"
+        app:tabMinWidth="0dp"
+        app:tabGravity="fill"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

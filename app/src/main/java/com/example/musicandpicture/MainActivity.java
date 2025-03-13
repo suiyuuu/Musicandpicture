@@ -43,15 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
         // 连接TabLayout和ViewPager
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
-            switch (position) {
-                case 0:
-                    tab.setText("主页");
-                    break;
-                case 1:
-                    tab.setText("社区");
-                    break;
-            }
+            // 不设置任何文字
         }).attach();
+        
     }
 
     // 从Uri获取文件名 - 保留为公共方法，供Fragment使用

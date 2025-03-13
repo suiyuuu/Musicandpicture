@@ -70,5 +70,7 @@ dependencies {
     // OkHttp 日志拦截器
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
 
 }
